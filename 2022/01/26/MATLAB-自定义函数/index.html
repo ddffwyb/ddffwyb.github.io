@@ -16,15 +16,15 @@
   <meta name="author" content="Yibing Wang">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前景提取（点击下载 .m 文件），源代码参考如下：  12345678910111213141516171819function img_filtered &#x3D; lightspot(img, disk_radius, threshold)% LIGHT_SPOT 提取荧光图像中的光点%% 使用方法%   img_filtered &#x3D; lightspot(img, disk_radius, thre">
+    <meta name="description" content="前景提取（点击下载 .m 文件），源代码参考如下：  12345678910111213141516171819function img_filtered &#x3D; light_spot(img, disk_radius, threshold)% LIGHT_SPOT 提取荧光图像中的光点%% 使用方法%   img_filtered &#x3D; light_spot(img, disk_radius, th">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MATLAB 自定义函数">
 <meta property="og:url" content="http://example.com/2022/01/26/MATLAB-%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="DDFFWYB">
-<meta property="og:description" content="前景提取（点击下载 .m 文件），源代码参考如下：  12345678910111213141516171819function img_filtered &#x3D; lightspot(img, disk_radius, threshold)% LIGHT_SPOT 提取荧光图像中的光点%% 使用方法%   img_filtered &#x3D; lightspot(img, disk_radius, thre">
+<meta property="og:description" content="前景提取（点击下载 .m 文件），源代码参考如下：  12345678910111213141516171819function img_filtered &#x3D; light_spot(img, disk_radius, threshold)% LIGHT_SPOT 提取荧光图像中的光点%% 使用方法%   img_filtered &#x3D; light_spot(img, disk_radius, th">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-26T01:17:29.000Z">
-<meta property="article:modified_time" content="2022-01-26T01:47:19.810Z">
+<meta property="article:modified_time" content="2022-01-26T08:36:37.566Z">
 <meta property="article:author" content="Yibing Wang">
 <meta name="twitter:card" content="summary_large_image">
   
@@ -197,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      445 字
+      447 字
     </span>
   
 
@@ -241,7 +241,7 @@
               <ul>
 <li>前景提取<a href="/matlab/light_spot.m">（点击下载 .m 文件）</a>，源代码参考如下：</li>
 </ul>
-<figure class="highlight matlab"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">img_filtered</span> = <span class="hljs-title">lightspot</span><span class="hljs-params">(img, disk_radius, threshold)</span></span><br><span class="hljs-comment">% LIGHT_SPOT 提取荧光图像中的光点</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 使用方法</span><br><span class="hljs-comment">%   img_filtered = lightspot(img, disk_radius, threshold)</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输入参数</span><br><span class="hljs-comment">%   img         输入图像</span><br><span class="hljs-comment">%   disk_radius 执行形态学开运算的结构单元半径，其值越小。保留结构越多</span><br><span class="hljs-comment">%   threshold   图像增强卡的阈值，按百分比计算，小于该值的元素将被设置为 0</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输出参数</span><br><span class="hljs-comment">%   img_filtered  图像增强后的图像</span><br><br>    img2 = imtophat(img, strel(<span class="hljs-string">&#x27;disk&#x27;</span>, disk_radius));<br>    img3 = imadjust(img2, [<span class="hljs-number">0</span>, <span class="hljs-number">0.1</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>]);<br>    img_filtered = img3 .* uint8(img3 &gt; <span class="hljs-number">255</span> * threshold);<br><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight matlab"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></div></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">img_filtered</span> = <span class="hljs-title">light_spot</span><span class="hljs-params">(img, disk_radius, threshold)</span></span><br><span class="hljs-comment">% LIGHT_SPOT 提取荧光图像中的光点</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 使用方法</span><br><span class="hljs-comment">%   img_filtered = light_spot(img, disk_radius, threshold)</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输入参数</span><br><span class="hljs-comment">%   img         输入图像</span><br><span class="hljs-comment">%   disk_radius 执行形态学开运算的结构单元半径，其值越小。保留结构越多</span><br><span class="hljs-comment">%   threshold   图像增强卡的阈值，按百分比计算，小于该值的元素将被设置为 0</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输出参数</span><br><span class="hljs-comment">%   img_filtered  图像增强后的图像</span><br><br>    img2 = imtophat(img, strel(<span class="hljs-string">&#x27;disk&#x27;</span>, disk_radius));<br>    img3 = imadjust(img2, [<span class="hljs-number">0</span>, <span class="hljs-number">0.1</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>]);<br>    img_filtered = img3 .* uint8(img3 &gt; <span class="hljs-number">255</span> * threshold);<br><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>

@@ -1,8 +1,8 @@
-function img_filtered = lightspot(img, disk_radius, threshold)
+function img_filtered = light_spot(img, disk_radius, threshold)
 % LIGHT_SPOT 提取荧光图像中的光点
 %
 % 使用方法
-%   img_filtered = lightspot(img, disk_radius, threshold)
+%   img_filtered = light_spot(img, disk_radius, threshold)
 %
 % 输入参数
 %   img         输入图像
