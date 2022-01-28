@@ -1,0 +1,851 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Yibing Wang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="简易版牌效率  下文中均以 p 指代饼子，m 指代万子，s 指代条子。如 5p 即指 5 饼。  首先，在做牌的思路中，“组”的概念是很重要的。麻将就是做四个面子和一个雀头的游戏，面子、雀头、能够成为面子或雀头候补的搭子等，这些都可以看成一“组”牌。  比如牌姿 A 就有  共 5 组牌。 这个时候摸到 36p 可以组成面子，摸到东时 4p 就成为雀头，这里无需对雀头和面子区别对待，统一看做“一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="立直麻将新手入门">
+<meta property="og:url" content="http://example.com/2022/01/25/%E7%AB%8B%E7%9B%B4%E9%BA%BB%E5%B0%86%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="DDFFWYB">
+<meta property="og:description" content="简易版牌效率  下文中均以 p 指代饼子，m 指代万子，s 指代条子。如 5p 即指 5 饼。  首先，在做牌的思路中，“组”的概念是很重要的。麻将就是做四个面子和一个雀头的游戏，面子、雀头、能够成为面子或雀头候补的搭子等，这些都可以看成一“组”牌。  比如牌姿 A 就有  共 5 组牌。 这个时候摸到 36p 可以组成面子，摸到东时 4p 就成为雀头，这里无需对雀头和面子区别对待，统一看做“一">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093289812-58ce3d11-97f0-4dd7-bc69-fdb04dace08c.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u150456bd&amp;margin=%5Bobject%20Object%5D&amp;originHeight=48&amp;originWidth=346&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u88098f15-f12d-49a8-80b6-424b43cd958&amp;title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093289922-6a144082-e975-4013-b151-db81d35db64b.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=uc74507ac&amp;margin=%5Bobject%20Object%5D&amp;originHeight=37&amp;originWidth=272&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u689b7f77-4d14-40a4-a714-33d40d4af02&amp;title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093289948-c6c6c2dd-02b0-4980-8469-99c55fa51249.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u06f2b4bd&amp;margin=%5Bobject%20Object%5D&amp;originHeight=51&amp;originWidth=312&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u3c1b5703-3a46-46cd-a61f-9d17316e713&amp;title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093289774-5b3721d8-9245-4872-af6b-1572cd8b72e2.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u4af576a2&amp;margin=%5Bobject%20Object%5D&amp;originHeight=38&amp;originWidth=340&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=ub69fc14b-9c7e-43a2-afe8-a223e31f585&amp;title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093289848-22a39765-a3dc-4556-8fc1-1dd38037fb18.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u1c73123c&amp;margin=%5Bobject%20Object%5D&amp;originHeight=42&amp;originWidth=348&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u2dd404bf-6b0a-48ec-ac9a-a9ec89ba5e4&amp;title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093290325-116174ac-1f67-4980-88dc-60cb1a7a5cf1.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u4d911def&amp;margin=%5Bobject%20Object%5D&amp;originHeight=103&amp;originWidth=311&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u10231e6e-90ef-4d44-90ba-513e1476621&amp;title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093290571-a865a57c-4f4a-4ed0-9de1-7ee38eff9650.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u1c68a79a&amp;margin=%5Bobject%20Object%5D&amp;originHeight=51&amp;originWidth=330&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u6b4b79af-e699-4161-92bd-0a24c7bdc41&amp;title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093290409-ea2ead47-cdd6-4f3d-8b55-cbecfa588c46.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u3e574aff&amp;margin=%5Bobject%20Object%5D&amp;originHeight=60&amp;originWidth=340&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u73e7aed1-70a9-4312-81b3-164e272dddc&amp;title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093290396-c4f0f6d7-71fb-4a93-873a-8c6e255a6cb4.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u2d1c73eb&amp;margin=%5Bobject%20Object%5D&amp;originHeight=41&amp;originWidth=309&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=uc3c174a7-bdf2-4396-b760-b35d7042479&amp;title=">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607590187010-c4606d67-0ecc-4b14-8848-ac01dee557d9.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=63&amp;id=w0TxM&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=63&amp;originWidth=444&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=14687&amp;status=done&amp;style=none&amp;title=&amp;width=444">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607590240836-c9129e0e-4fb4-4ad8-b18b-b160d79c2e88.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=67&amp;id=OfVMb&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=67&amp;originWidth=470&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=13495&amp;status=done&amp;style=none&amp;title=&amp;width=470">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607590616107-05830138-20a8-493f-adcf-03148e834432.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=461&amp;id=Qgb3K&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=461&amp;originWidth=320&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=13812&amp;status=done&amp;style=none&amp;title=&amp;width=320">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607590929387-da1c0c57-b701-4348-93be-d7bea871f501.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=68&amp;id=lcuyu&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=68&amp;originWidth=536&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=14439&amp;status=done&amp;style=none&amp;title=&amp;width=536">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907892233-5b2cda78-0c18-4a0a-9eaf-0c3631da83e9.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=68&amp;id=VrZtu&amp;originHeight=68&amp;originWidth=486&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=486">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907892472-41220c39-3abd-44b3-b29c-8e7e3f4fc585.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=67&amp;id=vnhc7&amp;originHeight=67&amp;originWidth=508&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=508">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907892544-b53aed93-35d6-45f4-9ee0-39c1fcceaa49.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=69&amp;id=dB3eH&amp;originHeight=69&amp;originWidth=520&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=520">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907892612-c7a9bb69-118d-4a90-b480-25420b7cd7bc.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=71&amp;id=ond6n&amp;originHeight=71&amp;originWidth=518&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=518">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907892693-805995d7-21ab-4fab-aa8a-26dc1f271056.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=64&amp;id=Ivvep&amp;originHeight=64&amp;originWidth=430&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=430">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907892767-bbdf0701-a1c7-4599-b68c-309dfaee5ee2.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=74&amp;id=yLV9Q&amp;originHeight=74&amp;originWidth=609&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=609">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907892837-44e72573-a243-432c-aa46-78eb53b22a7c.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=59&amp;id=hJgib&amp;originHeight=59&amp;originWidth=508&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=508">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607591905036-42eb3053-7841-42a0-b22b-00f84841aeaf.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=65&amp;id=iTo24&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=65&amp;originWidth=434&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=14624&amp;status=done&amp;style=none&amp;title=&amp;width=434">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607591936210-186723f2-4b34-4a44-9c2a-cf1cfd8a9bfb.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=61&amp;id=GreNe&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=61&amp;originWidth=435&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12260&amp;status=done&amp;style=none&amp;title=&amp;width=435">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607592073667-a5ad4b29-968e-4d9c-92fa-d2eee0ade3aa.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=63&amp;id=olfRL&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=63&amp;originWidth=515&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12615&amp;status=done&amp;style=none&amp;title=&amp;width=515">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607592109540-056c7436-65b5-4ec0-889b-937d28a0b973.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=64&amp;id=dVbVC&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=64&amp;originWidth=517&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12329&amp;status=done&amp;style=none&amp;title=&amp;width=517">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607607603451-fcd07a3f-53fd-4005-8aa3-82ef81bf0e15.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=60&amp;id=Obndt&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=60&amp;originWidth=432&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12479&amp;status=done&amp;style=none&amp;title=&amp;width=432">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607607884089-c9b9a60f-6938-4fac-8614-09a149a1efe2.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=65&amp;id=tUByi&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=65&amp;originWidth=445&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=13701&amp;status=done&amp;style=none&amp;title=&amp;width=445">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607607971947-bfa7af14-2bef-4b29-a3d0-2ba6e5bf3ccf.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=58&amp;id=IOZGE&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=58&amp;originWidth=460&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=13093&amp;status=done&amp;style=none&amp;title=&amp;width=460">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607608075436-6844aff9-008f-48e6-9ed1-ff3f0813630b.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=63&amp;id=I7Ccp&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=63&amp;originWidth=463&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12096&amp;status=done&amp;style=none&amp;title=&amp;width=463">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607608107943-bdc47d3d-aee2-489b-bc37-78c62ef77dac.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=65&amp;id=VaEB9&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=65&amp;originWidth=464&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12610&amp;status=done&amp;style=none&amp;title=&amp;width=464">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607608276278-3ff02853-31d1-4c9d-a59a-accb6331e8ac.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=66&amp;id=BADYK&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=66&amp;originWidth=465&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12851&amp;status=done&amp;style=none&amp;title=&amp;width=465">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607608554472-8321683e-fabf-4427-91a4-1247394fab51.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=64&amp;id=noPzw&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=64&amp;originWidth=434&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=13076&amp;status=done&amp;style=none&amp;title=&amp;width=434">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607608573695-02490a00-c223-4ee2-bbbc-41aad13d3187.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=60&amp;id=I741o&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=60&amp;originWidth=417&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12844&amp;status=done&amp;style=none&amp;title=&amp;width=417">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607608625839-bc582189-3819-4952-a773-ed5b164e7449.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=64&amp;id=b0D64&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=64&amp;originWidth=423&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=11770&amp;status=done&amp;style=none&amp;title=&amp;width=423">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607608676366-139a9cf2-2909-4b31-8843-3863208c20c9.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=62&amp;id=iVyr9&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=62&amp;originWidth=427&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12226&amp;status=done&amp;style=none&amp;title=&amp;width=427">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607609223911-f5a114fb-b4ca-4619-becb-6e5db5ad2997.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=68&amp;id=Ykf1E&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=68&amp;originWidth=531&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=14156&amp;status=done&amp;style=none&amp;title=&amp;width=531">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607609335767-460fe0f1-e755-4c97-9859-eb043f1d2daf.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=63&amp;id=ba6Hb&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=63&amp;originWidth=549&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=16438&amp;status=done&amp;style=none&amp;title=&amp;width=549">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607609420636-855f2e2d-ac01-4c71-80fc-94098b39a112.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=60&amp;id=KEmpS&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=60&amp;originWidth=551&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12882&amp;status=done&amp;style=none&amp;title=&amp;width=551">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607609533257-c20c102a-dfaa-4ad2-b7ff-0705d1271882.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=83&amp;id=k4rc2&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=83&amp;originWidth=527&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12914&amp;status=done&amp;style=none&amp;title=&amp;width=527">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607609638736-52bc3c63-eced-4ae0-9bd6-3aafc5b3b89b.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=63&amp;id=N5So3&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=63&amp;originWidth=545&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=14466&amp;status=done&amp;style=none&amp;title=&amp;width=545">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894400-ae18e9c9-7db1-4bda-b81b-49c6567efc6c.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=414&amp;id=pCTuB&amp;originHeight=414&amp;originWidth=392&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=392">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894476-2d805dec-e9e9-46ec-9d69-e94360a02f61.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=221&amp;id=r27Wq&amp;originHeight=294&amp;originWidth=209&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=157">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894547-bda1da4b-8e13-478f-86de-1a16b8c189a6.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=111&amp;id=DssRy&amp;originHeight=148&amp;originWidth=320&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=240">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894619-34c52ef9-80e9-4b55-a172-aed843f3f0c4.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=411&amp;id=ECuvI&amp;originHeight=411&amp;originWidth=391&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=391">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894695-1f70396a-bdc2-4206-b9a4-f7d3864f5531.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=38&amp;id=hVDKb&amp;originHeight=38&amp;originWidth=156&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=156">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894769-22ab1dd2-f4a5-4d46-a539-d0abe1929292.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=39&amp;id=rhJ4V&amp;originHeight=39&amp;originWidth=233&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=233">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894836-23918940-cdd3-4bfa-93ce-8d0e37586825.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=111&amp;id=vHP4O&amp;originHeight=111&amp;originWidth=470&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=470">
+<meta property="og:image" content="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894909-22d049da-ec84-458f-b4f4-4e3899147b60.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=375&amp;id=p63oE&amp;originHeight=500&amp;originWidth=501&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=376">
+<meta property="article:published_time" content="2022-01-25T01:17:30.000Z">
+<meta property="article:modified_time" content="2022-01-28T02:40:37.943Z">
+<meta property="article:author" content="Yibing Wang">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093289812-58ce3d11-97f0-4dd7-bc69-fdb04dace08c.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u150456bd&amp;margin=%5Bobject%20Object%5D&amp;originHeight=48&amp;originWidth=346&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u88098f15-f12d-49a8-80b6-424b43cd958&amp;title=">
+  
+  
+  <title>立直麻将新手入门 - DDFFWYB</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  <meta name="referrer" content="no-referrer" />
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>DDFFWYB</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="立直麻将新手入门">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-25 09:17" pubdate>
+        2022年1月25日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      11k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      89 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">立直麻将新手入门</h1>
+            
+            <div class="markdown-body">
+              <h2 id="简易版牌效率"><a class="markdownIt-Anchor" href="#简易版牌效率"></a> 简易版牌效率</h2>
+<blockquote>
+<p>下文中均以 p 指代饼子，m 指代万子，s 指代条子。如 5p 即指 5 饼。</p>
+</blockquote>
+<p>首先，在做牌的思路中，“组”的概念是很重要的。麻将就是做四个面子和一个雀头的游戏，面子、雀头、能够成为面子或雀头候补的搭子等，这些都可以看成一“组”牌。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093289812-58ce3d11-97f0-4dd7-bc69-fdb04dace08c.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u150456bd&amp;margin=%5Bobject%20Object%5D&amp;originHeight=48&amp;originWidth=346&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u88098f15-f12d-49a8-80b6-424b43cd958&amp;title=" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>比如牌姿 A 就有</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093289922-6a144082-e975-4013-b151-db81d35db64b.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=uc74507ac&amp;margin=%5Bobject%20Object%5D&amp;originHeight=37&amp;originWidth=272&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u689b7f77-4d14-40a4-a714-33d40d4af02&amp;title=" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>共 5 组牌。</p>
+<p>这个时候摸到 36p 可以组成面子，摸到东时 4p 就成为雀头，这里无需对雀头和面子区别对待，统一看做“一组牌”即可。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093289948-c6c6c2dd-02b0-4980-8469-99c55fa51249.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u06f2b4bd&amp;margin=%5Bobject%20Object%5D&amp;originHeight=51&amp;originWidth=312&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u3c1b5703-3a46-46cd-a61f-9d17316e713&amp;title=" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>牌姿 B 呢？算得上面子、雀头和搭子的只有 12p、345s 和一对东。所以这副手牌里只有 3 组牌。</p>
+<p>现在说明一下为什么“组”的概念如此重要。我们举个例子。牌姿 C 应该何切？理由是什么？</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093289774-5b3721d8-9245-4872-af6b-1572cd8b72e2.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u4af576a2&amp;margin=%5Bobject%20Object%5D&amp;originHeight=38&amp;originWidth=340&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=ub69fc14b-9c7e-43a2-afe8-a223e31f585&amp;title=" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>进入选择的是 4p、3s 和 5s。这时切 4p 可以留下两面，切索子就只能留下坎张或者双碰。因为我们尽量要让最终听牌型成为两面，所以“要留下能够加强愚型的牌”，打 4p。大概的说明就是这样。下面我们看牌姿 D。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093289848-22a39765-a3dc-4556-8fc1-1dd38037fb18.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u1c73123c&amp;margin=%5Bobject%20Object%5D&amp;originHeight=42&amp;originWidth=348&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u2dd404bf-6b0a-48ec-ac9a-a9ec89ba5e4&amp;title=" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>按照之前的说法，应该保留愚型的 335s 去打 4p，但这次打 3s 或 5s 才是正确的。为什么相似的牌却无法用同样的理由切牌呢？</p>
+<p>因为牌姿 C 是 5 组牌，而牌姿 D 是 6 组牌。有 5 组牌时，手牌组数刚刚好，我们只需要考虑如何将各组牌组成面子或雀头。而有 6 组牌的场合，因为多出了 1 组，所以在大多数场合正确的选择都是把形状最差的一组牌拆掉，从而变成 5 组。</p>
+<p>这种做牌思路的特征是“在组数不同的情况下，正确的理论也会不完全适用”，所以在考虑做牌的时候首先应该分辨出手中的牌有几组。</p>
+<p>那么现在我们看一下手牌里有不同组数的时候的基本思路。首先有 5 组的时候，就如之前所说，要考虑“如何能让各组牌以最大效率组成面子”，如果有愚型的话就要尽量留下愚型的加强牌。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093290325-116174ac-1f67-4980-88dc-60cb1a7a5cf1.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u4d911def&amp;margin=%5Bobject%20Object%5D&amp;originHeight=103&amp;originWidth=311&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u10231e6e-90ef-4d44-90ba-513e1476621&amp;title=" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>没有加强牌的时候该如何做呢？牌姿 E 已经有 5 组牌，所以打 47p，留下更安全的西。而牌姿 F 中的 12m 是愚型，所以要尽量利用饼子的延展寻求良型搭子，一般会打西。</p>
+<p>接下来是 6 组牌的情况。如之前所说，因为多出一组牌，所以要拆掉一组。应该留下的牌的优先级如下：</p>
+<ol>
+<li>两面以上的搭子</li>
+<li>335s 或 246p 这样进张枚数超过 5 枚的搭子</li>
+<li>坎张搭子</li>
+<li>边张搭子</li>
+<li>对子有三个以上时的对子</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093290571-a865a57c-4f4a-4ed0-9de1-7ee38eff9650.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u1c68a79a&amp;margin=%5Bobject%20Object%5D&amp;originHeight=51&amp;originWidth=330&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u6b4b79af-e699-4161-92bd-0a24c7bdc41&amp;title=" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>上面的牌姿 G，按照刚刚的排名来看，35s 坎张搭子优先级最差，所以拆掉。下面的牌姿 H 又如何打呢？</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093290409-ea2ead47-cdd6-4f3d-8b55-cbecfa588c46.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u3e574aff&amp;margin=%5Bobject%20Object%5D&amp;originHeight=60&amp;originWidth=340&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=u73e7aed1-70a9-4312-81b3-164e272dddc&amp;title=" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>牌姿 H 有 6 组牌，但是无法按照刚刚的优先级区别各组牌的好坏。这种情况也有打 8p 的操作，但相比随便拆一组搭子（实际上按照听牌时待牌靠近两边为佳的说法应该拆 56s）来形成 5 组牌的形状的打法，又增加了一种“如何在一向听的时候不产生多余牌”的打法。</p>
+<p>最后是手牌里有 4 组牌以下的情况。因为不满足和牌所需要的 5 组牌，所以要在孤张中选择一张最容易形成一组的牌留下。大体价值排名如下：</p>
+<ol>
+<li>四连形（3456m）或中膨形（3445p）等连续形</li>
+<li>数牌 3-7</li>
+<li>数牌 2、8</li>
+<li>数牌 1、9</li>
+<li>字牌</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2022/webp/1392849/1641093290396-c4f0f6d7-71fb-4a93-873a-8c6e255a6cb4.webp#clientId=u82690a79-f08f-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;id=u2d1c73eb&amp;margin=%5Bobject%20Object%5D&amp;originHeight=41&amp;originWidth=309&amp;originalType=url&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;taskId=uc3c174a7-bdf2-4396-b760-b35d7042479&amp;title=" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>在牌姿 I 中，将浮牌 36m，58p 进行比较，应该将排名最靠下的 8p 打出。但这说到底还是枚数优先的打法，如果 8p 是宝牌的话，涉及到打点的因素，又会有不同的说法，这一点我们在本编中再涉及。</p>
+<p>上面的解释虽然略显粗糙仓促，但各位理解基于组数的牌效率基本了吗？只要具备了这种思路，就可以按照“数组数”——“按照组数和优先级做牌”的步骤，自动找到可以令进张面最广的选择。</p>
+<p>这就是“牌效率”。想要在麻将中变强，牌效率是绝对无法回避的必修科目。但牌效率自然也不是做牌所需的一切。在实战中，要考虑进张数、打点、巡目、守备力等诸多要素来决定打哪张牌。另外副露也是非常重要的因素。加上鸣牌判断的话，每一打的优劣又会有所变化。</p>
+<p>如果观看强者的网络直播或天凤观战的话，会发现有些表面上无视牌效率的切牌，比如明明有 5 组牌却退为 4 组的情况，或者在浮牌选择中优先留下字牌的情况等。这就是能区别出“一般强的打法”和“压倒性强力的打法”的战略部分了。</p>
+<p>总结来说，所谓“按照牌效率的打法”、“进张数最大的打法”，并不需要特意地去数枚数。表示成如下情况，我们就可以清楚地明白了。</p>
+<ol>
+<li>了解手牌中的组数</li>
+<li>根据组数不同的情况，对各要素进行比较</li>
+</ol>
+<p>需要比较的要素如下：</p>
+<ol>
+<li>5 组牌的情况
+<ol>
+<li>加强牌：固定良形，增加愚型部分的进张</li>
+<li>安牌和浮牌：一般来说优先度低于加强牌。如果手牌形状足够好就留下做安牌，有愚型等形状不满的情况，可以为了作出满意的形状而留下浮牌。</li>
+</ol>
+</li>
+<li>6 组牌的场合：对各组牌进行比较。一般来说优先留下进张数多的牌组。</li>
+<li>4 组牌以下的情况：对浮牌进行比较。留下容易形成搭子的中张和连续形。不要两边的牌和字牌。</li>
+</ol>
+<p>牌效率的主题就在于理解如上内容的基础上，来决定一局的战略应该“按牌效率打牌”还是“重视打点或守备力等其他要素”。</p>
+<h2 id="简易版立直与手役"><a class="markdownIt-Anchor" href="#简易版立直与手役"></a> 简易版立直与手役</h2>
+<h3 id="1-手役的考虑方法"><a class="markdownIt-Anchor" href="#1-手役的考虑方法"></a> 1. 手役的考虑方法</h3>
+<h4 id="做牌是麻将的魅力"><a class="markdownIt-Anchor" href="#做牌是麻将的魅力"></a> 做牌是麻将的魅力</h4>
+<p><strong>作役是麻将的魅力之一</strong>。作出难度很高的役满或者稀有役种的时候，不论是谁都会跟高兴的。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607590187010-c4606d67-0ecc-4b14-8848-ac01dee557d9.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=63&amp;id=w0TxM&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=63&amp;originWidth=444&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=14687&amp;status=done&amp;style=none&amp;title=&amp;width=444" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>上图为“纯全带幺九 + 三色同顺”，为有一定难度的牌。、</p>
+<p>但是，有人常常会做过头了。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607590240836-c9129e0e-4fb4-4ad8-b18b-b160d79c2e88.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=67&amp;id=OfVMb&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=67&amp;originWidth=470&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=13495&amp;status=done&amp;style=none&amp;title=&amp;width=470" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>比如这个手牌，为了做 234 的三色把 7 条切掉是不可以的。摸到 1 万或者 5 饼三色就没了，途中切掉 5 万也不能说是好手。这里拆掉条子的嵌张，做断幺平和才是可取的。</p>
+<p><strong>新手不是不会作役，而是常常作役过头而导致失败</strong>。随手就去做“混一色”或者“对对和”（实际上混一色和对对和都没有想象中的那么好和）的人特别多。已经 3 副露都还没有听牌的情况也不少见。</p>
+<p>麻将首先是要“有形” 。<strong>首先是要考虑如何去做“四面子 + 一雀头”</strong>，在不牺牲速度的前提下尽量的去做手役。</p>
+<p>立直麻将中虽然有 40 多种役，其中经常出现的也就大概三分之一。剩下的役把它们看作“没用的役”为好。其中最坑爹的就是三杠子。难易度和报酬完全不成比例，不仅如此，杠产生的宝牌可能让仅仅是立直的牌变成倍满。这种坑爹的役完全没有去作的必要。</p>
+<p>我们来看看实战中各种役出现的概率吧，下面是网络雀庄之一“<strong>天凤</strong>”官网上的统计资料：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607590616107-05830138-20a8-493f-adcf-03148e834432.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=461&amp;id=Qgb3K&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=461&amp;originWidth=320&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=13812&amp;status=done&amp;style=none&amp;title=&amp;width=320" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>麻将虽然有很多役，能够经常作成的役也是有限的。<strong>作这个表 RANK B 级以上的役的技术是比较重要的，出现率不足 0.5% 的稀有役种我们就无视好了。 本文的之后几节将按照该表中各个役种出现概率的高低依次进行介绍。</strong></p>
+<p><strong>总结</strong>：</p>
+<ul>
+<li><strong>手役的难度和点数并不一定是平衡的，没有必要一味的追求难度高的役种</strong>。</li>
+</ul>
+<h4 id="手役是形成的"><a class="markdownIt-Anchor" href="#手役是形成的"></a> 手役是形成的</h4>
+<p>一般来说，手役并不是有意识去“作”的，而是“形成”的。脑海中把最终形先定下来，然后把不要牌全都切掉的打法叫做“定打”，这种“定打”还是千万不要做为好。麻将中是不能决定自己所摸的牌的。所摸的牌和你自己选择的打牌是完全没有关系的，因此，配合自己的摸牌来作手役是一个准则。<strong>“定打”是绝对禁止的，这是打麻将的一个重要思想，就是说：千万不要“我想去作 XX 役而去期待后面的摸牌 ”，而是要“如果我摸到 XX 牌，这张牌能够作什么役”</strong>。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607590929387-da1c0c57-b701-4348-93be-d7bea871f501.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=68&amp;id=lcuyu&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=68&amp;originWidth=536&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=14439&amp;status=done&amp;style=none&amp;title=&amp;width=536" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>假设自己最后一位，拿到了这种 8 种九牌的垃圾牌。在这里切掉宝牌 4 饼决定作国士无双就是输家。宝牌重叠的话还有七对子的可能性，在第一巡就切掉了还搞什么？就算有国士无双的可能，无赤牌的话应该切掉 5 万或者 6 条保留全带或者七对子的可能性，有赤牌的话，就切掉 1 饼吧。是亲家的话毫无疑问应该切掉 1 饼。即使是这种配牌，要是役牌重叠的话也还是可以和牌的。这全要看摸牌了。“定打”可以说是一无是处，还是赶快放弃这种错失各种可能性的打法吧。根据摸牌才是最好的打法。</p>
+<h3 id="2-立直"><a class="markdownIt-Anchor" href="#2-立直"></a> 2. 立直</h3>
+<p>立直是非常特殊的手役。<strong>尽管立直要求门前清（即没有任何吃、碰和杠），立直仍是日本麻将中最容易做出的役</strong>。不仅没有形的约束，还有一发和里宝牌等奖励。<strong>实际上看就有 1.5 番的价值</strong>，而且是麻将中最容易做成的手役。劝诫大家：<strong>不要太拘泥与手役，要尽可能快速的门前清听牌</strong>。现代流是重视速度的打法，没有手役的小牌很多，其不足就由立直的得点力来补充。立直有优点也有缺点，所以立直的判断使需要考虑的。我们先来确认一下立直的意义。</p>
+<h4 id="立直的优点"><a class="markdownIt-Anchor" href="#立直的优点"></a> 立直的优点</h4>
+<ul>
+<li><strong>优点 1：很容易就能成役</strong>。麻将没有役是不能和牌的，也就是“一番缚”。立直可以简单地搞定“一番缚”，只要不鸣牌（即不去吃、碰或杠）就好了。像下面图 1 这样的宝牌 3 的牌，不立直的话就只能自摸才能和牌，所以当然应该立直。</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907892233-5b2cda78-0c18-4a0a-9eaf-0c3631da83e9.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=68&amp;id=VrZtu&amp;originHeight=68&amp;originWidth=486&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=486" srcset="/img/loading.gif" lazyload alt="" /></p>
+<ul>
+<li><strong>优点 2：有一发、自摸和里宝牌的可能性</strong>。没有役和宝牌的立直 NOMI 的手牌，立直和牌后运气好也有达到满贯的可能性。一发自摸再中一个里宝牌就是满贯，里宝牌是雀头不用一发也是满贯。</li>
+<li><strong>优点 3：让对手不能自由地打牌</strong>。提高得点并不是立直的优点，因为立直之后通常大家都会变的很慎重。会有兜牌和弃和的人。这样一来，自摸的可能性就变高了。让别人不能自由地打牌，这才是立直的一个优点。具体的说，四暗刻要立直就是典型。打点已经很充足了，立直的目的就是延长巡目，提高自摸的可能性。</li>
+<li><strong>优点 4：让对手知道你听牌，而去追求荣和</strong>。虽说通常情况下立直之后铳牌很难被打出来，但也有利用自己的舍牌去追求荣和的时候。筋牌引诱和听字牌也是比较容易能够和牌的。七对子听已经出现 2 张的字牌的话（也就是地狱单骑），还是立直比较好。</li>
+</ul>
+<h4 id="立直的缺点"><a class="markdownIt-Anchor" href="#立直的缺点"></a> 立直的缺点</h4>
+<ul>
+<li><strong>缺点 1：必须拿出 1000 点点棒</strong>。也许你会觉得 1000 点不过是个小数目，不过 AL 和第二位差 700 点的 TOP 的状况这就是一个很大的数目了。拿出 1000 点，这个时候就变成第二位了。结果 3 位或者 4 位和牌的话自己就以第二位结束了牌局。</li>
+<li><strong>缺点 2：让他家直到自己已经听牌，荣和的期望不高</strong>。本来能够拆的面子面对立直，太危险的牌是不会切出来的。实在想要和牌的时候还是默听比较好。</li>
+<li><strong>缺点 3：立直后除了所听的牌以及能够暗杠的牌，所有的牌都只能摸切</strong>。立直之后，除了所听牌和能暗杠的牌都必须摸切。所以，即使有人碰了发和白，你摸到中也必须切出去。</li>
+<li><strong>缺点 4：不能改变手牌</strong>。立直后就算摸到好牌也不能在改变手牌的听牌结构。</li>
+</ul>
+<h4 id="立直还是默听"><a class="markdownIt-Anchor" href="#立直还是默听"></a> 立直，还是默听？</h4>
+<p><strong>立直既有优点又有缺点。但立直的优点是压倒性地比缺点多</strong>。选择默听的情况是比较少见的。因此，只要记住默听有利的例子，只要不是这样的情况，毫不犹豫立直就好了。立直和默听的判断有两点。那就是手牌和场况。（麻将中所有的判断都是以这两点为中心的。）</p>
+<ul>
+<li><strong>手牌</strong>：比如手牌的听牌和打点，从自己手牌来判断。</li>
+<li><strong>场况</strong>：现在的点数，他家的动向以及巡目等来判断。</li>
+</ul>
+<p>首先我们来看看根据手牌的判断吧。前提是东场，大家的点数都相差不大，巡目也早，他家也没什么动向。（这样的状况常被称作<strong>平场</strong>。）</p>
+<p><strong>好型 + 早巡的时候，立直更有利是现在的标准</strong>。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907892472-41220c39-3abd-44b3-b29c-8e7e3f4fc585.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=67&amp;id=vnhc7&amp;originHeight=67&amp;originWidth=508&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=508" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>例 3 这样默听有 7700 的手牌，听牌型很好就积极的立直吧（此处同时听 2、5、8 万）。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907892544-b53aed93-35d6-45f4-9ee0-39c1fcceaa49.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=69&amp;id=dB3eH&amp;originHeight=69&amp;originWidth=520&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=520" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>像例 4 这样，高目有 7700 ，低目只有 2000 的手牌，不要想太多，立直就对了。不管高目是外筋（1、2、8、9）还是内筋（3~7）都没有关系。即使是低目也能有很不错的点数了。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907892612-c7a9bb69-118d-4a90-b480-25420b7cd7bc.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=71&amp;id=ond6n&amp;originHeight=71&amp;originWidth=518&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=518" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>不过例 5 这样有役且有 8000 打点的愚型，那就是默听有利了。</p>
+<p><strong>总结</strong>：</p>
+<ul>
+<li><strong>跳满以上（12000+）的牌，一律默听</strong>。</li>
+<li><strong>满贯确定的牌可以默听，不过序盘的好型听牌立直也不错</strong>。</li>
+</ul>
+<p>对于是否立直的问题，这一次我们再来看看听牌是好的听牌的情况。好的听牌，指的是容易和牌的听牌。<strong>两面以及多面张这种听牌数多的听牌可以期待自摸，字牌的双碰和单骑也是容易和牌的</strong>。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907892693-805995d7-21ab-4fab-aa8a-26dc1f271056.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=64&amp;id=Ivvep&amp;originHeight=64&amp;originWidth=430&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=430" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>例 1 是 1 饼和北的双碰听牌，两个都是容易被打出的牌，可以说是一个好的听牌。虽说只有 4 张，但是比不太好的两面要更加容易和牌。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907892767-bbdf0701-a1c7-4599-b68c-309dfaee5ee2.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=74&amp;id=yLV9Q&amp;originHeight=74&amp;originWidth=609&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=609" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>以前有着“平和 NOMI 的牌要默听”的理论。没有必要拿出 1000 点点棒把 1000 点的牌变成 2000 点，这样的意见占据着优势。但是，立直平和的平均得点在 3000 点以上，拿出 1000 点立直棒也不算什么损失。而如今的理论是，<strong>即使是平和 NOMI 也要立直</strong>。所以，例 2 打 1 条或者 4 条立直才是正确的。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907892837-44e72573-a243-432c-aa46-78eb53b22a7c.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=59&amp;id=hJgib&amp;originHeight=59&amp;originWidth=508&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=508" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>可以向三色或者一气贯通变化的牌，例 3 就是这样的情况。但是摸到单一种类的 5 万的概率很低，很多情况都是还没有摸到铳牌就已经出来了。例 3 的牌为了三色而默听是一个损失非常大的选择。立直的 1 番加上一发和里宝牌会更加实际。</p>
+<p><strong>总结</strong>：</p>
+<ul>
+<li><strong>好形听牌即立直是基本，即使手牌还能变化也要无视</strong>。</li>
+</ul>
+<h3 id="3-役牌"><a class="markdownIt-Anchor" href="#3-役牌"></a> 3. 役牌</h3>
+<h4 id="役牌的好处"><a class="markdownIt-Anchor" href="#役牌的好处"></a> 役牌的好处</h4>
+<p><strong>役牌指的是中、发、白这三种三元牌以及自己的门风牌和场风牌（例如东风场的场风牌就是东）。役牌的好处就是没有限制</strong>。断幺和平和虽然也是容易和的役，但是 14 张手牌都有限制。除了役牌之外，没有其他只需要 3 张牌就可以搞定一番缚的役了。而且鸣牌也是 OK 的。能好好处理字牌的话，结合鸣牌可以提高不少和牌率。</p>
+<h4 id="留下役牌"><a class="markdownIt-Anchor" href="#留下役牌"></a> 留下役牌</h4>
+<p>配牌之后，由于役牌可以成役，一般情况下按照“<strong>客风牌 → 不要的数牌 → 役牌</strong>”的顺序切牌。尽管数牌的有效牌更多这个是事实，但也最好不得不选出不要的数牌。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607591905036-42eb3053-7841-42a0-b22b-00f84841aeaf.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=65&amp;id=iTo24&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=65&amp;originWidth=434&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=14624&amp;status=done&amp;style=none&amp;title=&amp;width=434" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>比如这个手牌，不切发和白，切 9 条也是可以的。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607591936210-186723f2-4b34-4a44-9c2a-cf1cfd8a9bfb.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=61&amp;id=GreNe&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=61&amp;originWidth=435&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12260&amp;status=done&amp;style=none&amp;title=&amp;width=435" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>例 2 的情况，两面搭子已经够了。拿着 6 条几乎没有什么价值。比起构成新的面子，能够让发重叠的话应该更高兴吧。2 、 5 万和 5 、 8 饼的进张没什么问题的话，这里就切掉 6 条。</p>
+<h4 id="役牌还是断幺"><a class="markdownIt-Anchor" href="#役牌还是断幺"></a> 役牌，还是断幺？</h4>
+<p><strong>一般情况下还是断幺更有利</strong>。准备鸣牌的话，还是断幺更加容易一些。而且也更容易与平和等其他役复合。（因为役牌有可能被别人掐死在手里）</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607592073667-a5ad4b29-968e-4d9c-92fa-d2eee0ade3aa.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=63&amp;id=olfRL&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=63&amp;originWidth=515&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12615&amp;status=done&amp;style=none&amp;title=&amp;width=515" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>例 3 的情况，切掉发选择断幺更加好一些。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607592109540-056c7436-65b5-4ec0-889b-937d28a0b973.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=64&amp;id=dVbVC&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=64&amp;originWidth=517&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12329&amp;status=done&amp;style=none&amp;title=&amp;width=517" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>但是例 4 这样的断幺并未确定的牌的话，不切发，切掉 8 饼或者 5 条比较好。</p>
+<p><strong>总结</strong>：</p>
+<ul>
+<li><strong>打点相同的时候，确定的手役比不确定的手役更有利</strong>。</li>
+</ul>
+<h3 id="4-平和"><a class="markdownIt-Anchor" href="#4-平和"></a> 4. 平和</h3>
+<h4 id="两面的变化"><a class="markdownIt-Anchor" href="#两面的变化"></a> 两面的变化</h4>
+<p>平和是最容易作成的役之一。只要效率把握的好，手牌自然能够形成平和。根据平和的定义，<strong>平和全部都是由顺子构成的，而且最后的听牌形必须是两面（即 34 听 25 这样的形式）</strong>。所以作两面就是作平和的要点。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607607603451-fcd07a3f-53fd-4005-8aa3-82ef81bf0e15.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=60&amp;id=Obndt&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=60&amp;originWidth=432&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12479&amp;status=done&amp;style=none&amp;title=&amp;width=432" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>例 1 可以作为第一章的复习。根据“嵌张比边张有利”的理论，所以这里应该拆掉 1 、 2 万的搭子。饼子摸到 5 饼就可以形成两面，平和确定。就算摸到 6 饼形成两嵌进张也比较广，边张是没有这种变化的。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607607884089-c9b9a60f-6938-4fac-8614-09a149a1efe2.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=65&amp;id=tUByi&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=65&amp;originWidth=445&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=13701&amp;status=done&amp;style=none&amp;title=&amp;width=445" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>例 2 是嵌张之间的比较，这里比较一下两面变化吧。万子摸到 2 万或者 6 万都可以形成两面，而饼子只能摸到 4 饼才能形成两面。因此这里应该拆掉饼子的嵌张。</p>
+<h4 id="两嵌"><a class="markdownIt-Anchor" href="#两嵌"></a> 两嵌</h4>
+<p>这里也先复习一下第一章。两嵌是嵌张相连，类似 4 、 6 、 8 万这样的形。摸到 5 万和 7 万都可以形成顺子，是仅次于两面的好形。利用两嵌也可以更加容易的形成平和。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607607971947-bfa7af14-2bef-4b29-a3d0-2ba6e5bf3ccf.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=58&amp;id=IOZGE&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=58&amp;originWidth=460&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=13093&amp;status=done&amp;style=none&amp;title=&amp;width=460" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>比如这个手牌，让饼子形成两嵌切掉 4 饼是正确的打法。虽然切 8 饼进张数没有变化，但是切 4 饼形成平和的可能性更高，对打点方面更有利。</p>
+<h4 id="拆对子"><a class="markdownIt-Anchor" href="#拆对子"></a> 拆对子</h4>
+<p><strong>雀头是役牌的时候不是平和</strong>，这个尤其需要注意，总是有人忘。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607608075436-6844aff9-008f-48e6-9ed1-ff3f0813630b.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=63&amp;id=I7Ccp&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=63&amp;originWidth=463&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12096&amp;status=done&amp;style=none&amp;title=&amp;width=463" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>比如这个手牌，选择切掉中是很通常的打法。是兼顾断幺和平和的打法。不要选择碰中去和这种 1000 点的牌，<strong>应该以门断平（即门前清 + 断幺九 + 平和，简称门断平）这种高分手牌为目标。像这样拆掉对子作平和的情况是很常见的</strong>，这个要记住。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607608107943-bdc47d3d-aee2-489b-bc37-78c62ef77dac.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=65&amp;id=VaEB9&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=65&amp;originWidth=464&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12610&amp;status=done&amp;style=none&amp;title=&amp;width=464" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>例 5 是一个有名的问题，切 7 万和 2 饼是不一样的。切掉 7 万的话，万子就是 233457 万，即 234 万面子 + 357 万两嵌，有 6 万的进张。<strong>这种“面子 + 嵌张”的牌，千万不要看漏了</strong>。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607608276278-3ff02853-31d1-4c9d-a59a-accb6331e8ac.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=66&amp;id=BADYK&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=66&amp;originWidth=465&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12851&amp;status=done&amp;style=none&amp;title=&amp;width=465" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>例 6 切 6 万的人只能说没什么悟性了，这里应该拆掉 9 饼的对子。摸到 7 万就可以进入平和一向听，摸到 2 条或者 4 条仍然可以作平和。虽说也可以拆掉 3 条的对子，但是这样的话，只能摸到 5 万才能形成两面，剩下了一张 3 条的浮牌，不仅 3 条是一张比较危险的切牌，切掉之后也会没有安全牌。所以这里还是推荐拆掉 9 饼的对子。</p>
+<h3 id="5-断幺"><a class="markdownIt-Anchor" href="#5-断幺"></a> 5. 断幺</h3>
+<h4 id="断幺的好处"><a class="markdownIt-Anchor" href="#断幺的好处"></a> 断幺的好处</h4>
+<p>“断幺九”简称“断幺”或“断”。</p>
+<p><strong>断幺最大的好处就是鸣牌之后也能和牌</strong>，这个我们应该尽量利用。特别是最近加入赤牌的麻将，食断（食断即副露的断幺九也算役）的威力可是非常巨大的。“断幺 DORA3 8000 点”，铳了这种牌一定让人火大。但是对食断这种牌弃和又太说不过去。在雀庄打牌有赤牌和祝仪，食断渐渐在成为最强的手役。</p>
+<h4 id="向着断幺打牌"><a class="markdownIt-Anchor" href="#向着断幺打牌"></a> 向着断幺打牌</h4>
+<p>断幺不仅容易作成，也是可以与其他役复合的方便的役。因此，考虑断幺的可能性去打牌是很重要的。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607608554472-8321683e-fabf-4427-91a4-1247394fab51.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=64&amp;id=noPzw&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=64&amp;originWidth=434&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=13076&amp;status=done&amp;style=none&amp;title=&amp;width=434" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>例 1 应该切掉 1 万。摸到 6 饼，可能有断幺平和，摸到 3 饼或者 4 饼还有断幺三色的可能。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607608573695-02490a00-c223-4ee2-bbbc-41aad13d3187.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=60&amp;id=I741o&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=60&amp;originWidth=417&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12844&amp;status=done&amp;style=none&amp;title=&amp;width=417" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>例 2 就拿 6 饼替换掉 9 饼吧。摸到 2 万或者 4 万可以形成断幺。</p>
+<h4 id="确定断幺"><a class="markdownIt-Anchor" href="#确定断幺"></a> 确定断幺</h4>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607608625839-bc582189-3819-4952-a773-ed5b164e7449.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=64&amp;id=b0D64&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=64&amp;originWidth=423&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=11770&amp;status=done&amp;style=none&amp;title=&amp;width=423" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>上图的状态我们叫做“面子超载”，到底切什么是正确的呢？这里拆掉 2 、 3 条的搭子是常识。否则摸到 1 条的话也就只有立直这一个役。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607608676366-139a9cf2-2909-4b31-8843-3863208c20c9.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=62&amp;id=iVyr9&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=62&amp;originWidth=427&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12226&amp;status=done&amp;style=none&amp;title=&amp;width=427" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>只是要进张广的话，这里应该切掉 6 万。不过一般的打法这里会切 9 万。这是因为切 9 万不但可以确定断幺，还可以准备鸣牌。这牌也还有 567 或者 456 的三色的可能性。一言蔽之，断幺切牌时还必须靠手牌去鸣牌的可能性，这是断幺的巨大优点。</p>
+<h3 id="6-染手"><a class="markdownIt-Anchor" href="#6-染手"></a> 6. 染手</h3>
+<h4 id="染手的好处"><a class="markdownIt-Anchor" href="#染手的好处"></a> 染手的好处</h4>
+<p>染手即一色，包括混一色和清一色。</p>
+<p>染手系，特别是混一色是非常重要的役。不仅容易作，而且门清 3 番，鸣牌之后也有 2 番。能够有这么优秀的点数面的役还真没有了。虽然容易被对手警戒，但还是需要积极地去作。牌的材料好的话，可以从配牌之后就开始作。</p>
+<p>判断是否要作染手的要素包括：</p>
+<ul>
+<li>手牌</li>
+<li>场况</li>
+<li>巡目</li>
+<li>打点</li>
+</ul>
+<h4 id="从手牌判断"><a class="markdownIt-Anchor" href="#从手牌判断"></a> 从手牌判断</h4>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607609223911-f5a114fb-b4ca-4619-becb-6e5db5ad2997.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=68&amp;id=Ykf1E&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=68&amp;originWidth=531&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=14156&amp;status=done&amp;style=none&amp;title=&amp;width=531" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>条子有 11 张，而且形还不错。端牌是 1 条的对子， 3~8 条是相连的。这牌仿佛就是在说“作清一色吧”。这牌只要还没到终盘，应该向清一色前进。<strong>在确定染手之后，考虑到将来的危险度，这里先从 5 万开始切</strong>。考虑到摸到 6 万形成两面而从 1 万开始切是很通常的打法，但是这个牌万子的两面还是不要了吧。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607609335767-460fe0f1-e755-4c97-9859-eb043f1d2daf.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=63&amp;id=ba6Hb&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=63&amp;originWidth=549&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=16438&amp;status=done&amp;style=none&amp;title=&amp;width=549" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>“当有 10 张以上的同色牌就可以随时染手”，这么说是不对的。例 2 就有 10 张饼子，但这里应该果断切掉发。这个牌是一副立直平和牌，根据摸牌还可以有可能形成断幺、三色或者一气贯通。这牌即使不去染手也已经很不错了，所以没有去染手的必要。为了染手去染手，这样打牌是非常危险的。<strong>破坏已经形成的面子而去强行染手迟早是会死的很惨的</strong>。</p>
+<p><strong>总结</strong>：</p>
+<ul>
+<li><strong>不用染手的牌不要强行去染手，为染手去拆已经形成的面子是禁止的</strong>。</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607609420636-855f2e2d-ac01-4c71-80fc-94098b39a112.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=60&amp;id=KEmpS&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=60&amp;originWidth=551&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12882&amp;status=done&amp;style=none&amp;title=&amp;width=551" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>但是，麻将中也是常常有例外的。像例 3 这种牌，染手能够让打点大幅上升。容易和牌的话就果断把饼子拆掉了吧。</p>
+<p>但这是非常少数的例外，在平场几乎没有应该拆掉一面子而去染手的牌。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607609533257-c20c102a-dfaa-4ad2-b7ff-0705d1271882.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=83&amp;id=k4rc2&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=83&amp;originWidth=527&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=12914&amp;status=done&amp;style=none&amp;title=&amp;width=527" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>有两个役牌的对子，应该向这某一种花色前进作满贯。虽然例 4 有一个含有宝牌的搭子，但仍旧应该向着条子的混一色前进。但是有一点需要注意。初学者很多都会选择把宝牌 4 万先切掉。这就搞的太过火了。<strong>混一色的缺点就是容易暴露，从宝牌开始拆嵌张的话，其他人就几乎能看出你是条子混一色从而有所警觉了</strong>。好不容易有手好牌，一般从不起眼的 2 饼开始切，这样会稍微容易和牌一些。虽说染手是主线，但是还是要保留摸到 3 万的可能性。</p>
+<p><strong>总结</strong>：</p>
+<ul>
+<li><strong>有两个役牌对子的话，尽可能的染手作满贯</strong>。</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/png/1392849/1607609638736-52bc3c63-eced-4ae0-9bd6-3aafc5b3b89b.png#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=63&amp;id=N5So3&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=63&amp;originWidth=545&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=14466&amp;status=done&amp;style=none&amp;title=&amp;width=545" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>现在南是客风，坦白的说这是一手垃圾牌，不过仍可选择作条子的混一色。首先从 5 饼开始切，反正这手靠他也和不了。当混一色相当遥远有可能中途弃和的时候，从真中间的牌开始切让对手提高警惕从而巩固自己的防守也是一种打法。由于鸣牌比较醒目，考虑到防守能力的话还是不要去鸣牌了。只要白和北没有重叠，这里最好采取不急于和牌的方针。初学者有时会在第一张南出现的时候就碰，但这里必须要注意到这个牌和牌的机会是很小的。“这个牌不和也没关系”，拥有这份淡定也是非常重要的。</p>
+<p><strong>总结</strong>：</p>
+<ul>
+<li><strong>很痛苦的混一色要重视防守，没有见到和牌希望之前不要轻易鸣牌</strong>。</li>
+</ul>
+<h2 id="简易版防守"><a class="markdownIt-Anchor" href="#简易版防守"></a> 简易版防守</h2>
+<h3 id="1-防守的基本"><a class="markdownIt-Anchor" href="#1-防守的基本"></a> 1. 防守的基本</h3>
+<p>麻将中理想的防守就是除了铳牌，其他的牌照切不误。但是实际上这是不可能的。虽然可以根据自己的读牌，把对手所听的牌扣住。<strong>但是实际上读牌的准确率连 30% 都不到</strong>。对手是否听牌对于防守是非常重要的。这是理所当然的咯，对手还没有听牌，因此切什么牌都是不会放铳的。因此，<strong>防守的重点就是立直的处理</strong>。有人立直，也就告诉了我们 他已经听牌了，所以不是这么轻易就能放铳的。</p>
+<h4 id="防守与进攻的战略"><a class="markdownIt-Anchor" href="#防守与进攻的战略"></a> 防守与进攻的战略</h4>
+<p>分为五个战略（从上到下依次从安全到危险）：</p>
+<ul>
+<li>弃和：放弃自己和牌，彻底地进入防守状态。防守的基本就是弃和。</li>
+<li>兜牌：一边避免放铳，一边向着听牌或者和牌前进的打法。由于在被限制的情况下做牌，其实是挺难的。</li>
+<li>一定程度的进攻</li>
+<li>全攻</li>
+<li>故意放铳</li>
+</ul>
+<h4 id="防守需要重视"><a class="markdownIt-Anchor" href="#防守需要重视"></a> 防守需要重视</h4>
+<p>常常有人说，初学者就先学会弃和吧。毕竟弃和容易学习，而且是直接与成绩关联的技术。初学者和中级者常常都攻的太过火了。进入弃和状态，也就进入了不太有趣的麻将时间了。但是，想要变得更强的话。这个能力的强化是必须的。</p>
+<h3 id="2-安全牌"><a class="markdownIt-Anchor" href="#2-安全牌"></a> 2. 安全牌</h3>
+<p>例如下图中，面对上家这样的立直，切什么牌才不会放铳呢？</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894400-ae18e9c9-7db1-4bda-b81b-49c6567efc6c.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=414&amp;id=pCTuB&amp;originHeight=414&amp;originWidth=392&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=392" srcset="/img/loading.gif" lazyload alt="" /></p>
+<h4 id="对手切掉的牌"><a class="markdownIt-Anchor" href="#对手切掉的牌"></a> 对手切掉的牌</h4>
+<p>日本麻雀中有一个原则：振听状态是不能够荣和的。<strong>所以对手切掉的牌都是安全的</strong>。上图的情况，289 万、149 饼、149 条、南风、白板、红中就符合这个条件。</p>
+<h4 id="立直之后通过的牌"><a class="markdownIt-Anchor" href="#立直之后通过的牌"></a> 立直之后通过的牌</h4>
+<p>另外，<strong>立直之后所通过一次的牌（即立直之后他家再打出的未放铳牌）都不能够荣和</strong>。所以对家已经通过的 7 饼和下家通过的 5 万也是不能被荣和的牌。像这些被振听规则规定不能荣和的明确的牌就叫做<strong>现物</strong>。</p>
+<h4 id="完全安全牌"><a class="markdownIt-Anchor" href="#完全安全牌"></a> 完全安全牌</h4>
+<p>除了现物之外，还有其他 100% 安全的牌。那就是现在摸到的这张發。由于场上已经切出了 3 张，不会有双碰和单骑听牌。而且对手也不是国士无双，所以是一张完全安全牌。完全安全牌有以下 4 种：</p>
+<ul>
+<li><strong>其他 3 人各自都切过一张的牌（3 家现物）</strong>。</li>
+<li><strong>上家刚刚切过的牌（也是 3 家现物）</strong>。</li>
+<li><strong>没有国士无双听牌时，第四张字牌</strong>。</li>
+<li><strong>完全的 NO CHANCE</strong>。</li>
+</ul>
+<p>上图的例子的安全牌已经很充分了。想要避免放铳的话还是很容易的。但是，安全牌不是什么时候都有的。因此，“<strong>筋</strong>”和“<strong>壁</strong>”就比较重要了。</p>
+<h3 id="3-筋"><a class="markdownIt-Anchor" href="#3-筋"></a> 3. 筋</h3>
+<p>有人立直的时候，最应该警戒的就要是两面听牌了。只要对手不是麻将的初学者，一般情况下都会等待嵌张、双碰听牌变化成两面听牌。因为对手会等待嵌张和双碰听牌变化成两面的好形听牌，所以听牌了也有可能不会立直。因此立直的听牌形往往是两面居多，大体的数据显示，所有的立直中三分之二的立直都是两面听牌。<strong>为了不铳两面听牌的理论就叫做“筋”</strong>。</p>
+<h4 id="6-个基本筋"><a class="markdownIt-Anchor" href="#6-个基本筋"></a> 6 个基本筋</h4>
+<p>我们来看看实际的两面听牌吧。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894476-2d805dec-e9e9-46ec-9d69-e94360a02f61.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=221&amp;id=r27Wq&amp;originHeight=294&amp;originWidth=209&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=157" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>以上六组就是两面听牌的所有形。这六组需要全部记住。要记住这六组应该是非常容易的。</p>
+<h4 id="3-条大筋"><a class="markdownIt-Anchor" href="#3-条大筋"></a> 3 条大筋</h4>
+<p>看了上面的六组听牌，我们可以发现，1-4 与 4-7、2-5 与 5-8、3-6 与 6-9 之间有相连的地方。这样就可以推导出三面张的筋。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894547-bda1da4b-8e13-478f-86de-1a16b8c189a6.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=111&amp;id=DssRy&amp;originHeight=148&amp;originWidth=320&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=240" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>把基本两面听牌组合起来就可以形成三面听牌。正是因为这样， 6 组基本的筋可以看作 3 条大筋。</p>
+<ul>
+<li>1-4-7（一四七）</li>
+<li>2-5-8（二五八）</li>
+<li>3-6-9（三六九）</li>
+</ul>
+<p>6 个筋分为 3 条大筋是非常重要的。大家把筋的概念作为麻将的一个常识来记住。</p>
+<h4 id="根据筋我们能知道什么"><a class="markdownIt-Anchor" href="#根据筋我们能知道什么"></a> 根据筋我们能知道什么</h4>
+<ul>
+<li>自己切过自己所听的牌即会振听，不能荣和。</li>
+<li>麻将中的两面听牌只有六种 1-4、2-5、3-6、4-7、5-8、6-9。</li>
+</ul>
+<p>由以上两点，我们就可以知道什么牌不会铳两面听牌。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894619-34c52ef9-80e9-4b55-a172-aed843f3f0c4.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=411&amp;id=ECuvI&amp;originHeight=411&amp;originWidth=391&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=391" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>我们再来看看这个例子吧。对家切 7 饼以及下家切的 5 万都通过了。这就是通过筋得出的判断。由于立直的上家切掉了 4 饼，所以至少他不是 56 饼的两面听牌，即使是也会振听。所以切 7 饼至少不会铳两面听牌。</p>
+<p>下家切的 5 万，是有 2 、 8 万所推导出的筋。5 万虽然可以有 34 万和 67 万两面听牌荣和，但是上家切掉了 2 万和 8 万，所以不管是 34 万还是 67 万都会振听。因此 5 万也可以说是一张安全牌。总结起来便是：</p>
+<ul>
+<li><strong>表筋和两筋不会放铳两面听</strong>；</li>
+<li><strong>表筋和两筋会放铳双碰听</strong>；</li>
+<li><strong>大部分听牌是两面听</strong>。</li>
+</ul>
+<h4 id="表筋"><a class="markdownIt-Anchor" href="#表筋"></a> 表筋</h4>
+<p>麻将里，两面听是最多的，两面听的组合几乎是固定的：即 BC 听 AD，这样的组合。当一家打过 X（X = 4 或 5 或 6）的场合，X - 3 和 X + 3 的牌不会点两面听（即使他听这个，也是振听，无法荣和）。<strong>表筋不会放铳两面听</strong>。即：</p>
+<ul>
+<li>一家打过 4，则 1、7 是表筋；</li>
+<li>一家打过 5，则 2、8 是表筋；</li>
+<li>一家打过 6，则 3、9 是表筋。</li>
+</ul>
+<h4 id="两筋"><a class="markdownIt-Anchor" href="#两筋"></a> 两筋</h4>
+<p>两筋又称中筋，是这样的情况：X （X = 4 或 5 或 6），当一家同时打过 X - 3 和 X + 3 时，X 是两筋。<strong>两筋安全度和表筋一样</strong>。即：</p>
+<ul>
+<li>一家打过 1 和 7，则 4 是两筋；</li>
+<li>一家打过 2 和 8，则 5 是两筋；</li>
+<li>一家打过 3 和 9，则 6 是两筋。</li>
+</ul>
+<h4 id="半筋"><a class="markdownIt-Anchor" href="#半筋"></a> 半筋</h4>
+<p>两筋的弱化版，一家只打过 X - 3 或 X + 3 中的一张（同时打过 2 张则是两筋了）。<strong>半筋安全度比两筋和表筋弱很多</strong>。即：</p>
+<ul>
+<li>一家打过 1 或 7，则 4 是半筋；</li>
+<li>一家打过 2 或 8，则 5 是半筋；</li>
+<li>一家打过 3 或 9，则 6 是半筋。</li>
+</ul>
+<p>比如：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894695-1f70396a-bdc2-4206-b9a4-f7d3864f5531.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=38&amp;id=hVDKb&amp;originHeight=38&amp;originWidth=156&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=156" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>这个立直切掉了 6 万，所以 39 万就是表筋。只要不是两面听牌，还多少是安全的。</p>
+<p>但是，8 条通过了并不代表 5 条就是安全的。这个半筋，经常看到有人切，其实是不靠谱的。对手切出的 8 条仅能排除 67 条的两面听，此时打 5 条还可能放 34 条两面听的铳。只有当对手再打出 2 条时，才能排除 34 条两面听，使 5 条成为安全的两筋。</p>
+<p>不过尽管 5 条只是半筋，其和无筋的 5 饼相比，还是要安全一些。</p>
+<h4 id="引筋"><a class="markdownIt-Anchor" href="#引筋"></a> 引筋</h4>
+<p>又称引挂、骗筋，就是特意听表筋或两筋，来诱导他人放铳。例：手里有 246 饼，打 6 饼立直，听 3 饼。由此我们可以得出：<strong>立直宣言牌的筋可信度较低</strong>。</p>
+<h4 id="老头牌与筋"><a class="markdownIt-Anchor" href="#老头牌与筋"></a> 老头牌与筋</h4>
+<p>假如对手立直的手牌如下图所示：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894769-22ab1dd2-f4a5-4d46-a539-d0abe1929292.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=39&amp;id=rhJ4V&amp;originHeight=39&amp;originWidth=233&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=233" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>对手切掉了 6 万，所以， 39 万是筋牌。如果我们手上同时有 39 万，那到底该打什么呢？我们来分析一下：</p>
+<ul>
+<li>能和 3 万的听牌型有：3 万单骑或者双碰，以及 12 万或者 24 万的边张嵌张；</li>
+<li>能和 9 万的听牌型有：9 万单骑或者双碰。</li>
+</ul>
+<p>由于没有边张、嵌张的可能，因此 9 万要比 3 万安全一点。所以这里就切掉 9 万。</p>
+<p><strong>总结</strong>：</p>
+<ul>
+<li><strong>筋幺九牌没有边张和嵌张听牌型，所以要比其他的筋更安全</strong>。</li>
+</ul>
+<h4 id="宝牌与筋"><a class="markdownIt-Anchor" href="#宝牌与筋"></a> 宝牌与筋</h4>
+<p>假如对手立直的手牌和自己的手牌如下图所示：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894836-23918940-cdd3-4bfa-93ce-8d0e37586825.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=111&amp;id=vHP4O&amp;originHeight=111&amp;originWidth=470&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=470" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>对手切掉了 5 饼，我们手中的 2 饼和 8 饼就是筋牌。</p>
+<ul>
+<li>2 饼的听牌型有 2 饼单骑、双碰以及 13 饼嵌张；</li>
+<li>8 饼的听牌型有 8 饼单骑、双碰以及 79 饼嵌张。</li>
+</ul>
+<p>但是由于 1 饼是宝牌，所以嵌 2 饼的可能性更大，也更危险。比如 135 饼，切 5 饼立直（引筋）等等情况。所以此时我们应该切 8 饼。</p>
+<p><strong>总结</strong>：</p>
+<ul>
+<li><strong>宝牌周边的牌，即使是筋牌也是危险的。筋牌引挂的立直还是比较多的</strong>。</li>
+</ul>
+<h3 id="4-壁"><a class="markdownIt-Anchor" href="#4-壁"></a> 4. 壁</h3>
+<h4 id="几种常见的壁"><a class="markdownIt-Anchor" href="#几种常见的壁"></a> 几种常见的壁</h4>
+<p><strong>单壁</strong>：例如当 3 饼在你可以看到的任何地方（包括你的手牌、牌池、副露、宝牌指示牌）合计出现 4 张的时候，与 3 饼有关的 23 饼和 34 饼两面听就不可能存在。则 3 饼外侧的 12 饼安全度等同于字牌（只放铳双碰和单骑），又被称为 <strong>NO CHANCE</strong>，即：</p>
+<ul>
+<li>2 成壁，则 1 安全；</li>
+<li>3 成壁，则 1、2 安全；</li>
+<li>4 成壁，则 2、3 较安全（可能会放铳边张或嵌张，但不会放铳两面）；</li>
+<li>5 成壁，则 3、7 较安全（同上）；</li>
+<li>6 成壁，则 7、8 较安全（同时）；</li>
+<li>7 成壁，则 8、9 安全；</li>
+<li>8 成壁，则 9 安全。</li>
+</ul>
+<p><strong>双壁</strong>：当然也有双壁的情况，即：</p>
+<ul>
+<li>1 和 4 成壁，则 2、3 安全；</li>
+<li>2 和 5 成壁，则 3、4 安全；</li>
+<li>3 和 6 成壁，则 4、5 安全；</li>
+<li>4 和 7 成壁，则 5、6 安全；</li>
+<li>5 和 8 成壁，则 6、7 安全；</li>
+<li>6 和 9 成壁，则 7、8 安全。</li>
+</ul>
+<p><strong>薄壁</strong>：成为壁的不是 4 张，而是 3 张。<strong>薄壁的安全度很低</strong>，因为最后一张很可能被停牌的人捏在手里。又被称为 <strong>ONE CHANCE</strong>。ONE CHANCE 在早巡还是可信的，但是在终盘千万不要信。</p>
+<p>此外还有<strong>双重 ONE CHANCE</strong>，比如 7 饼和 8 饼场上都已经出现了三张，对手要同时拿到唯一的一张 7 饼和 8 饼的概率是很低的，所以 9 饼是相当安全的牌。</p>
+<p><strong>总结</strong>：</p>
+<ul>
+<li><strong>安全度的比较：NO CHANCE &gt; 双重 ONE CHANCE &gt; ONE CHANCE</strong>。</li>
+</ul>
+<h4 id="壁的运用"><a class="markdownIt-Anchor" href="#壁的运用"></a> 壁的运用</h4>
+<p>我们在实战中来利用壁寻找安全牌。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2020/jpg/1392849/1608907894909-22d049da-ec84-458f-b4f4-4e3899147b60.jpg#crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;height=375&amp;id=p63oE&amp;originHeight=500&amp;originWidth=501&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;status=done&amp;style=none&amp;title=&amp;width=376" srcset="/img/loading.gif" lazyload alt="" /></p>
+<p>虽然这个牌切现物的 9 万也不错，不过还是切 9 饼吧。场上已经见到四张 8 饼，所以不会有两面听牌。况且四张 9 饼也都出现了，所以不会有双碰和单骑听牌。当然除了国士无双之外是 100% 通过的。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2022/01/25/%E7%AB%8B%E7%9B%B4%E9%BA%BB%E5%B0%86%E8%A7%84%E5%88%99%E7%AE%80%E4%BB%8B/">
+                        <span class="hidden-mobile">立直麻将规则简介</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://www.yuque.com/ddffwyb" target="_blank" rel="nofollow noopener"><span>DDFFWYB</span></a> <i class="iconfont icon-love"></i> <a href="https://www.yuque.com" target="_blank" rel="nofollow noopener"><span>Yuque</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- KaTeX -->
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css" />
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>

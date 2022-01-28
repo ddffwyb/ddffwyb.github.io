@@ -1,0 +1,484 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="Yibing Wang">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="简介 本文总结了一部分我在科研工作中常用的一些自定义的 MATLAB 函数，每个函数均有详细的帮助文档和注释，可供大家参考。详细内容可参考右侧的目录，同时每个函数均提供源代码以及相应的 .m 文件。将该 .m 文件放到你的 MATLAB 的工作目录下即可直接调用之，而且输入 help 函数名 命令还可以查看对应函数的帮助文档。  函数列表  fft_plot —— 快速绘制信号的频谱图  点击下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MATLAB自定义函数">
+<meta property="og:url" content="http://example.com/2022/01/24/MATLAB%E8%87%AA%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0/index.html">
+<meta property="og:site_name" content="DDFFWYB">
+<meta property="og:description" content="简介 本文总结了一部分我在科研工作中常用的一些自定义的 MATLAB 函数，每个函数均有详细的帮助文档和注释，可供大家参考。详细内容可参考右侧的目录，同时每个函数均提供源代码以及相应的 .m 文件。将该 .m 文件放到你的 MATLAB 的工作目录下即可直接调用之，而且输入 help 函数名 命令还可以查看对应函数的帮助文档。  函数列表  fft_plot —— 快速绘制信号的频谱图  点击下">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-24T01:17:29.000Z">
+<meta property="article:modified_time" content="2022-01-28T03:09:36.707Z">
+<meta property="article:author" content="Yibing Wang">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  <title>MATLAB自定义函数 - DDFFWYB</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hint.css@2/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css" />
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.14","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  <meta name="referrer" content="no-referrer" />
+<meta name="generator" content="Hexo 6.0.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>DDFFWYB</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="MATLAB自定义函数">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2022-01-24 09:17" pubdate>
+        2022年1月24日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      5.6k 字
+    </span>
+  
+
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      47 分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">MATLAB自定义函数</h1>
+            
+            <div class="markdown-body">
+              <h2 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h2>
+<p>本文总结了一部分我在科研工作中常用的一些自定义的 MATLAB 函数，每个函数均有详细的帮助文档和注释，可供大家参考。详细内容可参考右侧的目录，同时每个函数均提供源代码以及相应的 .m 文件。将该 .m 文件放到你的 MATLAB 的工作目录下即可直接调用之，而且输入 <code>help 函数名</code> 命令还可以查看对应函数的帮助文档。</p>
+<h2 id="函数列表"><a class="markdownIt-Anchor" href="#函数列表"></a> 函数列表</h2>
+<h3 id="fft_plot-快速绘制信号的频谱图"><a class="markdownIt-Anchor" href="#fft_plot-快速绘制信号的频谱图"></a> <code>fft_plot</code> —— 快速绘制信号的频谱图</h3>
+<ul>
+<li><a href="/matlab/fft_plot.m">点击下载 .m 文件</a></li>
+<li>该函数首先对输入信号进行傅里叶变换，然后计算其单边频谱图，随后自动调用 plot 函数进行绘图。同时可选择是否在信号结尾补零（以提高频谱分辨率，参考 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/85863024">快速傅里叶变换(FFT)中为什么要“补零”？ - 知乎</a>)，以及是否在做傅里叶变换变换前对信号加窗（以抑制频谱泄漏和旁瓣，参考 <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/260162438">Matlab FFT 加窗 - 知乎</a>），默认选项是补零至 2 的整数次幂，以及使用汉明窗。源代码参考如下：</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></div></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">[f, P1]</span> = <span class="hljs-title">fft_plot</span><span class="hljs-params">(X, Fs, varargin)</span></span><br><span class="hljs-comment">% FFT_PLOT 自动使用 fft 计算频谱并随即调用 plot 绘制频谱图</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 使用方法</span><br><span class="hljs-comment">%   fft_plot(X, Fs) 绘制采样率为 Fs 的信号 X 的频谱图</span><br><span class="hljs-comment">%   fft_plot(X, Fs, &#x27;is_hamming&#x27;, 1) 是否加窗，默认为 1（加窗），0 则不加</span><br><span class="hljs-comment">%   fft_plot(X, Fs, &#x27;is_padding&#x27;, 1) 是否补零，默认为 1（补零），0 则不补</span><br><span class="hljs-comment">%   [f, P1] = fft_plot(X, Fs) 返回绘图所用的频率 f 和单边频谱 P1，供自定义绘图</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输入参数</span><br><span class="hljs-comment">%   X  输入信号</span><br><span class="hljs-comment">%   Fs 采样率</span><br><span class="hljs-comment">%   is_hamming （可选）是否加窗，默认加窗</span><br><span class="hljs-comment">%   is_padding （可选）是否补零，默认补零</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输出参数（可忽略）</span><br><span class="hljs-comment">%   f  绘图所使用的横轴频率</span><br><span class="hljs-comment">%   P1 绘图所使用的纵轴单边频谱</span><br><br>    p = inputParser;                  <span class="hljs-comment">% 解析参数</span><br>    addRequired(p, <span class="hljs-string">&#x27;X&#x27;</span>);              <span class="hljs-comment">% 必有参数 X</span><br>    addRequired(p, <span class="hljs-string">&#x27;Fs&#x27;</span>);             <span class="hljs-comment">% 必有参数 Fs</span><br>    addOptional(p, <span class="hljs-string">&#x27;is_hamming&#x27;</span>, <span class="hljs-number">1</span>);  <span class="hljs-comment">% 默认加窗</span><br>    addOptional(p, <span class="hljs-string">&#x27;is_padding&#x27;</span>, <span class="hljs-number">1</span>);  <span class="hljs-comment">% 默认补零</span><br>    parse(p, X, Fs, varargin&#123;:&#125;);<br><br>    w = <span class="hljs-built_in">ones</span>(<span class="hljs-built_in">size</span>(p.Results.X));      <span class="hljs-comment">% 默认矩形窗</span><br>    L = <span class="hljs-built_in">length</span>(p.Results.X);          <span class="hljs-comment">% 信号的长度</span><br>    <span class="hljs-keyword">if</span> p.Results.is_hamming           <span class="hljs-comment">% 是否加窗</span><br>        w = <span class="hljs-built_in">reshape</span>(hamming(L), <span class="hljs-built_in">size</span>(p.Results.X));<br>    <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">if</span> p.Results.is_padding           <span class="hljs-comment">% 是否补零</span><br>        L = <span class="hljs-number">2</span> ^ (<span class="hljs-built_in">nextpow2</span>(L) + <span class="hljs-number">1</span>);<br>    <span class="hljs-keyword">end</span><br><br>    Y = fft(w .* p.Results.X, L);     <span class="hljs-comment">% 信号的傅里叶变换</span><br>    P2 = <span class="hljs-built_in">abs</span>(Y/L);                    <span class="hljs-comment">% 双侧频谱</span><br>    P1 = P2(<span class="hljs-number">1</span>:L/<span class="hljs-number">2</span>+<span class="hljs-number">1</span>);                 <span class="hljs-comment">% 单侧频谱</span><br>    P1(<span class="hljs-number">2</span>:<span class="hljs-keyword">end</span><span class="hljs-number">-1</span>) = P1(<span class="hljs-number">2</span>:<span class="hljs-keyword">end</span><span class="hljs-number">-1</span>) * <span class="hljs-number">2</span>;<br>    f = p.Results.Fs * (<span class="hljs-number">0</span>:L/<span class="hljs-number">2</span>)/L;     <span class="hljs-comment">% 频率 f</span><br>    <span class="hljs-built_in">plot</span>(f, P1);                               <span class="hljs-comment">% 按照给定参数绘图</span><br>    title(<span class="hljs-string">&#x27;Single-Sided Amplitude Spectrum&#x27;</span>);  <span class="hljs-comment">% 默认标题</span><br>    xlabel(<span class="hljs-string">&#x27;f (Hz)&#x27;</span>);                          <span class="hljs-comment">% 默认 xlabel</span><br>    ylabel(<span class="hljs-string">&#x27;|P1(f)|&#x27;</span>);                         <span class="hljs-comment">% 默认 ylabel</span><br><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<h3 id="light_spot-提取图像的荧光点信号"><a class="markdownIt-Anchor" href="#light_spot-提取图像的荧光点信号"></a> <code>light_spot</code> —— 提取图像的荧光点信号</h3>
+<ul>
+<li><a href="/matlab/light_spot.m">点击下载 .m 文件</a></li>
+<li>该函数主要通过形态学开运算来提取荧光成像图中的荧光亮点信号，同时调整参数之后也可以用来提取图像中较为明亮的前景信号以去除背景噪声。源代码参考如下：</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">img_filtered</span> = <span class="hljs-title">light_spot</span><span class="hljs-params">(img, disk_radius, threshold)</span></span><br><span class="hljs-comment">% LIGHT_SPOT 提取荧光图像中的光点</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 使用方法</span><br><span class="hljs-comment">%   img_filtered = light_spot(img, disk_radius, threshold)</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输入参数</span><br><span class="hljs-comment">%   img         输入图像</span><br><span class="hljs-comment">%   disk_radius 执行形态学开运算的结构单元半径，其值越小。保留结构越多</span><br><span class="hljs-comment">%   threshold   图像增强卡的阈值，按百分比计算，小于该值的元素将被设置为 0</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输出参数</span><br><span class="hljs-comment">%   img_filtered  图像增强后的图像</span><br><br>    img2 = imtophat(img, strel(<span class="hljs-string">&#x27;disk&#x27;</span>, disk_radius));<br>    img3 = imadjust(img2, [<span class="hljs-number">0</span>, <span class="hljs-number">0.1</span>], [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>]);<br>    img_filtered = img3 .* uint8(img3 &gt; <span class="hljs-number">255</span> * threshold);<br><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<h3 id="generate_plane_signal-产生无限大平板的光声仿真信号"><a class="markdownIt-Anchor" href="#generate_plane_signal-产生无限大平板的光声仿真信号"></a> <code>generate_plane_signal</code> —— 产生无限大平板的光声仿真信号</h3>
+<ul>
+<li><a href="/matlab/generate_plane_signal.m">点击下载 .m 文件</a></li>
+<li>该函数产生 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span></span></span></span> 脉冲激发的无限大平板的光声信号，使用的仿真公式如下所示：</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo stretchy="false">(</mo><mi>z</mi><mo separator="true">,</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><mfrac><msub><mi>p</mi><mn>0</mn></msub><mn>2</mn></mfrac><mrow><mo fence="true">[</mo><mi>u</mi><mo stretchy="false">(</mo><mi>z</mi><mo>−</mo><mi>c</mi><mi>t</mi><mo>+</mo><mfrac><mi>d</mi><mn>2</mn></mfrac><mo stretchy="false">)</mo><mi>u</mi><mo stretchy="false">(</mo><mo>−</mo><mi>z</mi><mo>+</mo><mi>c</mi><mi>t</mi><mo>+</mo><mfrac><mi>d</mi><mn>2</mn></mfrac><mo stretchy="false">)</mo><mo>+</mo><mi>u</mi><mo stretchy="false">(</mo><mi>z</mi><mo>+</mo><mi>c</mi><mi>t</mi><mo>+</mo><mfrac><mi>d</mi><mn>2</mn></mfrac><mo stretchy="false">)</mo><mi>u</mi><mo stretchy="false">(</mo><mo>−</mo><mi>z</mi><mo>−</mo><mi>c</mi><mi>t</mi><mo>+</mo><mfrac><mi>d</mi><mn>2</mn></mfrac><mo stretchy="false">)</mo><mo fence="true">]</mo></mrow></mrow><annotation encoding="application/x-tex">p(z,t)=\frac{p_0}{2}\left[u(z-ct+\frac{d}{2})u(-z+ct+\frac{d}{2})+u(z+ct+\frac{d}{2})u(-z-ct+\frac{d}{2})\right]
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">p</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.40003em;vertical-align:-0.95003em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.1075599999999999em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size3">[</span></span><span class="mord mathdefault">u</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span><span class="mord mathdefault">u</span><span class="mopen">(</span><span class="mord">−</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">u</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span><span class="mord mathdefault">u</span><span class="mopen">(</span><span class="mord">−</span><span class="mord mathdefault" style="margin-right:0.04398em;">z</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.37144em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault">d</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mclose">)</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size3">]</span></span></span></span></span></span></span></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signal</span> = <span class="hljs-title">generate_plane_signal</span><span class="hljs-params">(D, r, vs, t)</span></span><br><span class="hljs-comment">% GENERATE_PLANE_SIGNAL 产生无线大平板的光声信号</span><br><span class="hljs-comment">% 其产生的信号的默认初始声压 p0 = 1</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 使用方法</span><br><span class="hljs-comment">%   signal = generate_plane_signal(D, r, vs, t)</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输入参数</span><br><span class="hljs-comment">%   D  平板的厚度</span><br><span class="hljs-comment">%   r  探测器距离平板中心的距离</span><br><span class="hljs-comment">%   vs 声速</span><br><span class="hljs-comment">%   t  时间序列</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输出参数</span><br><span class="hljs-comment">%   signal 产生的信号</span><br><br>    u = @(x) double(x &gt; <span class="hljs-number">0</span>);  <span class="hljs-comment">% u 为单位阶跃函数</span><br>    signal = (u(r - vs * t + D / <span class="hljs-number">2</span>) .* u(-r + vs * t + D / <span class="hljs-number">2</span>) + ...<br>        u(r + vs * t + D / <span class="hljs-number">2</span>) .* u(-r - vs * t + D / <span class="hljs-number">2</span>)) / <span class="hljs-number">2</span>;<br><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<h3 id="generate_sphere_signal-产生球的光声仿真信号"><a class="markdownIt-Anchor" href="#generate_sphere_signal-产生球的光声仿真信号"></a> <code>generate_sphere_signal</code> —— 产生球的光声仿真信号</h3>
+<ul>
+<li><a href="/matlab/generate_sphere_signal.m">点击下载 .m 文件</a></li>
+<li>该函数产生 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span></span></span></span> 脉冲激发的球的光声信号，使用的仿真公式如下所示：</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo stretchy="false">(</mo><mi>r</mi><mo separator="true">,</mo><mi>t</mi><mo stretchy="false">)</mo><mo>=</mo><msub><mi>p</mi><mn>0</mn></msub><mfrac><mrow><mi>r</mi><mo>−</mo><mi>c</mi><mi>t</mi></mrow><mrow><mn>2</mn><mi>r</mi></mrow></mfrac><mi>u</mi><mo stretchy="false">(</mo><mi>R</mi><mo>−</mo><mi mathvariant="normal">∣</mi><mi>r</mi><mo>−</mo><mi>c</mi><mi>t</mi><mi mathvariant="normal">∣</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">p(r,t)=p_0\frac{r-ct}{2r}u(R-|r-ct|)
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">p</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">t</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.9780799999999998em;vertical-align:-0.686em;"></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">0</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.29208em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord">2</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.686em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord mathdefault">u</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.00773em;">R</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mord">∣</span><span class="mclose">)</span></span></span></span></span></p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signal</span> = <span class="hljs-title">generate_sphere_signal</span><span class="hljs-params">(R, r, vs, t)</span></span><br><span class="hljs-comment">% GENERATE_SPHERE_SIGNAL 产生球的光声信号</span><br><span class="hljs-comment">% 其产生的信号的默认初始声压 p0 = 1</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 使用方法</span><br><span class="hljs-comment">%   signal = generate_sphere_signal(R, r, vs, t)</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输入参数</span><br><span class="hljs-comment">%   R  球半径</span><br><span class="hljs-comment">%   r  探测器距离球心的距离</span><br><span class="hljs-comment">%   vs 声速</span><br><span class="hljs-comment">%   t  时间序列</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输出参数</span><br><span class="hljs-comment">%   signal 产生的信号</span><br><br>    u = @(x) double(x &gt; <span class="hljs-number">0</span>);  <span class="hljs-comment">% u 为单位阶跃函数</span><br>    signal = (r - vs * t) / (<span class="hljs-number">2</span> * r) .* u(R- <span class="hljs-built_in">abs</span>(r - vs * t));<br><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<h3 id="generate_sphere_signal_diff-产生球的光声仿真信号的时间导数"><a class="markdownIt-Anchor" href="#generate_sphere_signal_diff-产生球的光声仿真信号的时间导数"></a> <code>generate_sphere_signal_diff</code> —— 产生球的光声仿真信号的时间导数</h3>
+<ul>
+<li><a href="/matlab/generate_sphere_signal_diff.m">点击下载 .m 文件</a></li>
+<li>该函数产生 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span></span></span></span> 脉冲激发的球的光声信号的时间导数。源代码参考如下：</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signal_diff</span> = <span class="hljs-title">generate_sphere_signal_diff</span><span class="hljs-params">(R, r, vs, t)</span></span><br><span class="hljs-comment">% GENERATE_SPHERE_SIGNAL 产生球的光声信号的时间导数信号</span><br><span class="hljs-comment">% 其产生的信号的默认初始声压 p0 = 1</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 使用方法</span><br><span class="hljs-comment">%   signal_diff = generate_sphere_signal(R, r, vs, t)</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输入参数</span><br><span class="hljs-comment">%   R  球半径</span><br><span class="hljs-comment">%   r  探测器距离球心的距离</span><br><span class="hljs-comment">%   vs 声速</span><br><span class="hljs-comment">%   t  时间序列</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输出参数</span><br><span class="hljs-comment">%   signal_diff 产生的时间导数信号</span><br><br>    u = @(x) double(x &gt; <span class="hljs-number">0</span>);  <span class="hljs-comment">% u 为单位阶跃函数</span><br>    signal_diff = -vs / (<span class="hljs-number">2</span> * r) .* u(R- <span class="hljs-built_in">abs</span>(r - vs * t));<br><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<h3 id="generate_cylinder_signal-产生无限长圆柱的光声仿真信号"><a class="markdownIt-Anchor" href="#generate_cylinder_signal-产生无限长圆柱的光声仿真信号"></a> <code>generate_cylinder_signal</code> —— 产生无限长圆柱的光声仿真信号</h3>
+<ul>
+<li><a href="/matlab/generate_cylinder_signal.m">点击下载 .m 文件</a></li>
+<li>该函数产生 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>δ</mi></mrow><annotation encoding="application/x-tex">\delta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03785em;">δ</span></span></span></span> 脉冲激发的无限长圆柱的光声信号。源代码参考如下：</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signal</span> = <span class="hljs-title">generate_cylinder_signal</span><span class="hljs-params">(R, r, vs, t)</span></span><br><span class="hljs-comment">% GENERATE_CYLINDER_SIGNAL 产生无限长圆柱的光声信号</span><br><span class="hljs-comment">% 其产生的信号的默认初始声压 p0 = 1</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 使用方法</span><br><span class="hljs-comment">%   signal = generate_cylinder_signal(R, r, vs, t)</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输入参数</span><br><span class="hljs-comment">%   R  圆柱的半径</span><br><span class="hljs-comment">%   r  探测器距离圆柱中心的距离</span><br><span class="hljs-comment">%   vs 声速</span><br><span class="hljs-comment">%   t  时间序列</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输出参数</span><br><span class="hljs-comment">%   signal 产生的信号</span><br><br>    N = <span class="hljs-built_in">length</span>(t);<br>    signal = <span class="hljs-built_in">zeros</span>(<span class="hljs-number">1</span>, N);<br>    <span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> = <span class="hljs-number">1</span>:N<br>        ti = t(<span class="hljs-built_in">i</span>);<br>        d = vs * ti;<br>        <span class="hljs-keyword">if</span> ti &lt;= (r - R) / vs<br>            signal(<span class="hljs-built_in">i</span>) = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">elseif</span> ti &gt; (r - R) / vs &amp;&amp; ti &lt; (r + R) / vs<br>            low = (r - R) / d;<br>            high = (r^<span class="hljs-number">2</span> + d^<span class="hljs-number">2</span> - R^<span class="hljs-number">2</span>) / (<span class="hljs-number">2</span> * r * d);<br>            y = @(x) <span class="hljs-built_in">atan</span>(<span class="hljs-built_in">abs</span>(<span class="hljs-built_in">sqrt</span>((R^<span class="hljs-number">2</span> - (r - d * x).^<span class="hljs-number">2</span>) ./ ...<br>                (r^<span class="hljs-number">2</span> + d^<span class="hljs-number">2</span> - <span class="hljs-number">2</span> * r * d * x - R^<span class="hljs-number">2</span>))));<br>            signal(<span class="hljs-built_in">i</span>) = <span class="hljs-number">4</span> * d^<span class="hljs-number">2</span> * integral(y, low, high) + ...<br>                <span class="hljs-built_in">pi</span> * d / r * (R^<span class="hljs-number">2</span> - (r - d)^<span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">elseif</span> ti &gt;= (r + R) / vs<br>            low = (r - R) / d;<br>            high = (r + R) / d;<br>            y = @(x) <span class="hljs-built_in">atan</span>(<span class="hljs-built_in">abs</span>(<span class="hljs-built_in">sqrt</span>((R^<span class="hljs-number">2</span> - (r - d * x).^<span class="hljs-number">2</span>) ./ ...<br>                (r^<span class="hljs-number">2</span> + d^<span class="hljs-number">2</span> - <span class="hljs-number">2</span> * r * d * x - R^<span class="hljs-number">2</span>))));<br>            signal(<span class="hljs-built_in">i</span>) = <span class="hljs-number">4</span> * d^<span class="hljs-number">2</span> * integral(y, low, high);<br>        <span class="hljs-keyword">end</span><br>        signal(<span class="hljs-built_in">i</span>) = signal(<span class="hljs-built_in">i</span>) / d;<br>    <span class="hljs-keyword">end</span><br>    temp = diff(signal) / (t(<span class="hljs-number">2</span>) - t(<span class="hljs-number">1</span>)) / (<span class="hljs-number">4</span> * <span class="hljs-built_in">pi</span> * vs^<span class="hljs-number">2</span>);<br>    signal(<span class="hljs-number">1</span>:N - <span class="hljs-number">1</span>) = temp;<br>    signal(N) = signal(N - <span class="hljs-number">1</span>);<br><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<h3 id="recon_pact_signal-使用-das-算法重建光声信号"><a class="markdownIt-Anchor" href="#recon_pact_signal-使用-das-算法重建光声信号"></a> <code>recon_pact_signal</code> —— 使用 DAS 算法重建光声信号</h3>
+<ul>
+<li><a href="/matlab/recon_pact_signal.m">点击下载 .m 文件</a></li>
+<li>该函数使用 delay and sum（DAS）算法来重建光声信号，只要按给定的参数格式输入即可。将之微改之后即可用于 GPU 加速的 CUDA 代码的原始代码进行编写，是一个高度结构化的 DAS 算法的实现。源代码参考如下：</li>
+</ul>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs matlab"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">signal_recon</span> = <span class="hljs-title">recon_pact_signal</span><span class="hljs-params">( ...</span></span><br><span class="hljs-params"><span class="hljs-function">    signal_backproj, detector_location, x_grid, y_grid, z_grid, ...</span></span><br><span class="hljs-params"><span class="hljs-function">    vs, fs, num_detector, num_time)</span></span><br><span class="hljs-comment">% RECON_PACT_SIGNAL 使用 delay and sum (DAS) 算法重建光声信号</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 使用方法</span><br><span class="hljs-comment">%   signal_recon = recon_pact_signal(signal_backproj, detector_location, ...</span><br><span class="hljs-comment">%                                    x_grid, y_grid, z_grid, vs, fs, ...</span><br><span class="hljs-comment">%                                    num_detector, num_time)</span><br><span class="hljs-comment">% 输入参数</span><br><span class="hljs-comment">%   signal_backproj         反投影信号，其每一行是一个探测器的信号</span><br><span class="hljs-comment">%   detector_location       探测器坐标，其每一行是一个探测器的坐标</span><br><span class="hljs-comment">%   x_grid、y_grid、z_grid  重建区域空间网格</span><br><span class="hljs-comment">%   vs、fs                  声速、采样率</span><br><span class="hljs-comment">%   num_detector、num_time  探测器数量、采样点数</span><br><span class="hljs-comment">%</span><br><span class="hljs-comment">% 输出参数</span><br><span class="hljs-comment">%   signal_recon  重建的信号，大小于 x_grid 相同</span><br><br>    signal_recon = <span class="hljs-number">0</span> * x_grid;  <span class="hljs-comment">% 初始化重建信号</span><br>    <span class="hljs-keyword">for</span> <span class="hljs-built_in">i</span> = <span class="hljs-number">1</span>:num_detector<br>        temp_signal = signal_backproj(<span class="hljs-built_in">i</span>, :);      <span class="hljs-comment">% 取出本次循环要用的信号</span><br>        temp_location = detector_location(<span class="hljs-built_in">i</span>, :);  <span class="hljs-comment">% 取出本次循环要用的坐标</span><br>        temp_signal(num_time) = <span class="hljs-number">0</span>;                <span class="hljs-comment">% 方便处理过大的索引</span><br>        <span class="hljs-comment">% 计算距离和延迟索引</span><br>        dx = x_grid - temp_location(<span class="hljs-number">1</span>);<br>        dy = y_grid - temp_location(<span class="hljs-number">2</span>);<br>        dz = z_grid - temp_location(<span class="hljs-number">3</span>);<br>        d = <span class="hljs-built_in">sqrt</span>(dx.^<span class="hljs-number">2</span> + dy.^<span class="hljs-number">2</span> + dz.^<span class="hljs-number">2</span>);<br>        idx = <span class="hljs-built_in">round</span>(d / vs * fs);<br>        <span class="hljs-comment">% 处理过大的索引</span><br>        idx(idx &gt; num_time) = num_time;<br>        <span class="hljs-comment">% delay and sum</span><br>        <span class="hljs-keyword">if</span> idx &lt; num_time<br>            signal_recon = signal_recon + temp_signal(idx);<br>        <span class="hljs-keyword">end</span><br>    <span class="hljs-keyword">end</span><br><br><span class="hljs-keyword">end</span><br></code></pre></td></tr></table></figure>
+<h3 id="to-be-continued"><a class="markdownIt-Anchor" href="#to-be-continued"></a> To Be Continued…</h3>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2022/01/25/%E7%AB%8B%E7%9B%B4%E9%BA%BB%E5%B0%86%E8%A7%84%E5%88%99%E7%AE%80%E4%BB%8B/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">立直麻将规则简介</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://www.yuque.com/ddffwyb" target="_blank" rel="nofollow noopener"><span>DDFFWYB</span></a> <i class="iconfont icon-love"></i> <a href="https://www.yuque.com" target="_blank" rel="nofollow noopener"><span>Yuque</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  
+    <script  src="https://cdn.jsdelivr.net/npm/tocbot@4/dist/tocbot.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js" ></script>
+  
+  
+    <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4/anchor.min.js" ></script>
+  
+  
+    <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js" ></script>
+  
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+        typing(title);
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- KaTeX -->
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0/dist/katex.min.css" />
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
